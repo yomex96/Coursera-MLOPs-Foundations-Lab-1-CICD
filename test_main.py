@@ -21,3 +21,12 @@ def test_help():
 
 
 # write a test for the add_cli function that calls the add_cli function with the arguments 1 and 2 and checks that the output is 3.
+
+
+def test_add_cli_output():
+    """Test that the CLI adds two numbers and outputs the result in green."""
+    runner = CliRunner()
+    result = runner.invoke(add_cli, ["2", "3"])
+    assert result.exit_code == 0
+    assert "5" in result.output
+
