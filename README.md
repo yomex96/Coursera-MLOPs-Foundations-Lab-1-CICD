@@ -1,3 +1,5 @@
+[![CI](https://github.com/yomex96/Coursera-MLOPs-Foundations-Lab-1-CICD/actions/workflows/cicd.yml/badge.svg)](https://github.com/yomex96/Coursera-MLOPs-Foundations-Lab-1-CICD/actions/workflows/cicd.yml)
+
 # Lab 1: Build CI/CD Solution
 
 ## Overview
