@@ -1,4 +1,5 @@
 name: CI
+
 on:
   push:
     branches: [ "main" ]
@@ -11,13 +12,53 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: install packages
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install packages
         run: make install
-      - name: lint
+
+      - name: Lint
         run: make lint
-      - name: test
+
+      - name: Test
         run: make test
-      - name: format
+
+      - name: Format
         run: make format
-      - name: deploy
+
+      - name: Deploy
         run: make deploy
+
+
+
+
+
+
+
+# name: CI
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
+#   workflow_dispatch:
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: install packages
+#         run: make install
+#       - name: lint
+#         run: make lint
+#       - name: test
+#         run: make test
+#       - name: format
+#         run: make format
+#       - name: deploy
+#         run: make deploy
